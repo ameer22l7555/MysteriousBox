@@ -1,41 +1,56 @@
 # MysteriousBox
 
-**Mystery Box Game in Python Using Tkinter**
 
-This Python script implements a simple game called "Mystery Box Game" using the Tkinter library for creating a graphical user interface (GUI). The game is designed to simulate a game where players take turns opening mystery boxes, and the goal is to avoid opening the box containing a "Suicide" message.
+MysteriousBox.py
+This Python file contains the implementation of a simple and interactive "Mystery Box Game" using the tkinter library for GUI elements. Below is a detailed description of the file's functionality:
 
-**Game Overview**
-The game starts with two players, "Player 1" and "Player 2." Each player takes turns clicking on a mystery box. The boxes are initially labeled with a question mark (?). When a player clicks on a box, the box's contents are revealed. If the box contains the "Suicide" message, the game ends, and the player who opened the box loses. If the box is empty, the player's turn ends, and the next player takes their turn.
+Description
+MysteryBoxGame Class:
 
-**Game Logic**
-The game logic is implemented in the MysteryBoxGame class. This class initializes the game by setting up the GUI, creating the mystery boxes, and starting the game. The game is controlled by various methods, such as reveal_box, switch_player, and reset_game.
+Initialization (__init__):
 
-**GUI Components**
-The GUI consists of the following components:
-**Turn Label**: Displays the current player's turn.
-**Boxes Buttons**: A list of buttons representing the mystery boxes.
-**Prize Position**: The position of the "Suicide" box in the list of boxes.
-**Boxes**: A list of strings representing the contents of the boxes.
+Sets up the main window with a title "Mystery Box Game" and a background color.
+Initializes 20 boxes (buttons) and two players.
+Displays a label indicating the current player's turn.
+Calls methods to create buttons and start the game.
+create_buttons:
 
-**Game Flow**
-**Initialization**: The game initializes by setting up the GUI and creating the mystery boxes.
-**Game Start**: The game starts by resetting the game, selecting a random position for the "Suicide" box, and shuffling the contents of the boxes.
-**Player Turn**: The current player takes their turn by clicking on a mystery box.
-**Box Reveal**: The contents of the box are revealed. If the box contains "Suicide," the game ends. If the box is empty, the player's turn ends, and the next player takes their turn.
-**Player Switch**: The current player is switched to the next player.
-**Turn Update**: The turn label is updated to display the current player.
-**Game End**: If the "Suicide" box is opened, the game ends, and the player who opened the box loses. If the player chooses to play again, the game restarts. If not, the game ends.
+Creates 20 buttons arranged in a grid (5x4).
+Each button is initially labeled with a "?" and is clickable to reveal its content.
+start_game:
 
-**Requirements to Run the Code:**
-Python Version: The code is written in Python 3.x and should run on any version of Python 3.6 or later.
+Resets the game to its initial state.
+Randomly assigns one box as the "Suicide" box.
+Shuffles the boxes to randomize their positions.
+reveal_box:
 
-How to Run the Code:
-Save the Code: Save the code in a file named "MysteryBoxGame.py".
-Run the Code: Open a terminal or command prompt and navigate to the directory where you saved the file. Run the code using the command 
-  
-    python MysteryBoxGame.py.
+Handles the logic when a box is clicked.
+If the clicked box contains "Suicide", the current player loses, and a message box displays the result.
+If the box is empty, it switches the turn to the other player and updates the turn label.
+switch_player:
 
-Launch the Game: The game will launch in a new window. You can play the game by clicking on the mystery boxes.
+Switches the turn between Player 1 and Player 2.
+update_turn_label:
 
-**Conclusion**
-The Mystery Box Game is a simple and fun game that can be played by two players. The game demonstrates how to create a GUI game with Tkinter and implement game logic using Python.
+Updates the label to show the current player's turn.
+reset_game:
+
+Resets all buttons to their initial state (labeled "?" and enabled).
+Resets the turn to Player 1.
+ask_play_again:
+
+Prompts the player with a message box to play again or quit the game.
+Restarts the game if the player chooses to play again, otherwise closes the application.
+Main Function (main):
+
+Initializes the tkinter main loop and creates an instance of the MysteryBoxGame class.
+Execution:
+
+The game starts when the script is run directly.
+Usage
+To play the game, run the script. Click on the boxes to reveal whether they are empty or contain the "Suicide" label. The game alternates turns between two players. If a player clicks the "Suicide" box, they lose the game, and a prompt will ask if they want to play again.
+
+    python MysteriousBox.py
+
+
+This script provides a fun and simple way to test your luck with friends. Enjoy the game!
